@@ -4,92 +4,103 @@ const generateMarkdown = require('./utils/generateMarkdown');
 
 
 // // TODO: Create an array of questions for user input
-const questions = [];
+const questions = [{
+    type: 'input',
+    name: 'title',
+    message: 'What is the name of your project? (Required)',
+    validate: titleInput => {
+        if (titleInput) {
+            return true;
+        } else {
+            console.log('Please enter the name of your project!');
+            return false;
+        }
+    }
+},
+{
+    type: 'editor',
+    name: 'description',
+    message: 'Enter a description of your project (Required)',
+    validate: descriptionInput => {
+        if (descriptionInput) {
+            return true;
+        } else {
+            console.log('Please enter a description of your project!');
+            return false;
+        }
+    }
+},
+{
+    type: 'input',
+    name: 'usage',
+    message: 'Provide instructions and examples for use.'
+},
+{
+    type: 'rawlist',
+    name: 'license',
+    message: 'Choose an open source license',
+    choices: [
+        'Apache License 2.0',
+        'BSD 3-Clause "New" or "Revised" license',
+        'BSD 2-Clause "Simplified" or "FreeBSD" license',
+        'GNU General Public License (GPL)',
+        'GNU Library or "Lesser" General Public License (LGPL)',
+        'MIT license',
+        'Mozilla Public License 2.0',
+        'Common Development and Distribution License',
+        'Eclipse Public License version 2.0'
+    ],
+    default: 0,
+    loop: false
+},
+{
+    type: 'input',
+    name: 'github',
+    message: 'Enter your GitHub Username (Required)',
+    validate: githubInput => {
+        if (githubInput) {
+            return true;
+        } else {
+            console.log('Please enter your GitHub username!');
+            return false;
+        }
+    }
+},
+{
+    type: 'input',
+    name: 'email',
+    message: 'Enter your email address (Required)',
+    validate: emailInput => {
+        if (emailInput) {
+            return true;
+        } else {
+            console.log('Please enter your email address!');
+            return false;
+        }
+    }
+},
+{
+    type: 'confirm',
+    name: 'isOpenSource',
+    message: 'Is this intended to be an open source project?',
+    default: false
+},
+{
+    type: 'input',
+    name: 'contribution',
+    message: 'Provide some guidelines for contribution to your project',
+    when: ({ isOpenSource }) => isOpenSource
+}
+];
 
 // // TODO: Create a function to write README file
-function writeToFile(fileName, data) { }
+const writeToFile = (fileName, data) => {
+
+}
 
 // TODO: Create a function to initialize app
-function init() {
-    return inquirer.prompt([
-        {
-            type: 'input',
-            name: 'title',
-            message: 'What is the name of your project? (Required)',
-            validate: titleInput => {
-                if (titleInput) {
-                    return true;
-                } else {
-                    console.log('Please enter the name of your project!');
-                    return false;
-                }
-            }
-        },
-        {
-            type: 'input',
-            name: 'description',
-            message: 'Enter a description of your project (Required)',
-            validate: descriptionInput => {
-                if (descriptionInput) {
-                    return true;
-                } else {
-                    console.log('Please enter a description of your project!');
-                    return false;
-                }
-            }
-        },
-        {
-            type: 'input',
-            name: 'usage',
-            message: 'Provide instructions and examples for use.'
-        },
-        {
-            type: 'list',
-            name: 'license',
-            message: 'Choose an open source license',
-            choices: ['Apache License 2.0', 'BSD 3-Clause "New" or "Revised" license', 'BSD 2-Clause "Simplified" or "FreeBSD" license', 'GNU General Public License (GPL)', 'GNU Library or "Lesser" General Public License (LGPL)', 'MIT license', 'Mozilla Public License 2.0', 'Common Development and Distribution License', 'Eclipse Public License version 2.0'],
-            default: 0,
-            loop: false
-        },
-        {
-            type: 'input',
-            name: 'github',
-            message: 'Enter your GitHub Username (Required)',
-            validate: githubInput => {
-                if (githubInput) {
-                    return true;
-                } else {
-                    console.log('Please enter your GitHub username!');
-                    return false;
-                }
-            }
-        },
-        {
-            type: 'input',
-            name: 'email',
-            message: 'Enter your email address (Required)',
-            validate: emailInput => {
-                if (emailInput) {
-                    return true;
-                } else {
-                    console.log('Please enter your email address!');
-                    return false;
-                }
-            }
-        },
-        {
-            type: 'confirm',
-            name: 'isOpenSource',
-            message: 'Is this intended to be an open source project?',
-            default: false
-        },
-        {
-            type: 'input',
-            name: 'contribution',
-            message: 'Provide some guidelines for contribution to your project',
-            when: ({ isOpenSource }) => isOpenSource
-        }
-    ]);
+const init = () => {
+    return inquirer.prompt(questions);
 };
 
 
@@ -217,4 +228,7 @@ init()
     .then(promptInstall)
     .then(promptTest)
     .then(promptContributers)
+    //.then(data => console.log(generateMarkdown(data)))
     .then(data => console.log(data))
+
+
