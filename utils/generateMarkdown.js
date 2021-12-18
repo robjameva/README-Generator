@@ -16,6 +16,12 @@ const renderLicenseSection = license => {
 
 }
 
+const getSteps = arr => {
+  return arr.map(step => {
+    return `* ${step}\n  `
+  }).join('')
+}
+
 // TODO: Create a function to generate markdown for README
 const generateMarkdown = data => {
   return `
@@ -34,9 +40,7 @@ const generateMarkdown = data => {
 
 
   ## Installation
-  ${data.installSteps.forEach(step => {
-
-  })}
+  ${getSteps(data.installSteps)}
 
 
   ## Usage 

@@ -18,7 +18,7 @@ const questions = [{
     }
 },
 {
-    type: 'editor',
+    type: 'input',
     name: 'description',
     message: 'Enter a description of your project (Required)',
     validate: descriptionInput => {
@@ -228,7 +228,5 @@ init()
     .then(promptInstall)
     .then(promptTest)
     .then(promptContributers)
-    //.then(data => console.log(generateMarkdown(data)))
-    .then(data => console.log(data))
-
-
+    .then(data => console.log(generateMarkdown(data)))
+    // .then(data => console.log(data))
