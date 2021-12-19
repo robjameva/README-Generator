@@ -58,7 +58,7 @@ const renderLicenseSection = license => {
 
 }
 
-// Generates a list of steps on a new line with an * before each step
+// Generates a list of steps on a new line as an ordered list
 const getSteps = arr => {
 	return arr.map(step => {
 		return `1. ${step}\n  `
@@ -67,7 +67,7 @@ const getSteps = arr => {
 
 const getContributers = arr => {
 	return arr.map(contributer => {
-		return `* ${contributer.contributerName}:  https://github.com/${contributer.contributerGithub}\n  `
+		return `* ${contributer.contributerName}: https://github.com/${contributer.contributerGithub}\n`
 	}).join('')
 }
 
@@ -107,7 +107,7 @@ const isOpenSource = data => {
 const getTestSteps = arr => {
 	return arr.map(step => {
 		return `
-1. ${step}\n  `
+1. ${step}\n`
 	}).join('')
 }
 
@@ -116,10 +116,16 @@ const getTestInstructions = data => {
 		return ''
 	} else {
 		return `
-## Test Instructions
+## Testing
 
 ${getTestSteps(data.installSteps)}
     `
+	}
+}
+
+const getContibutingLink = data => {
+	if (data.isOpenSource) {
+		return `* [Contributing](#Contributing)`
 	}
 }
 
@@ -138,11 +144,11 @@ ${data.description}
 
 * [Installation](#installation)
 * [Usage](#usage)
-* [Testing](#Test Instructions)
+* [Testing](#testing)
 * [Credits](#credits)
 * [Questions](#Questions)
 ${hasLicense(data)}
-* [Contributing](#Contributing)
+${getContibutingLink(data)}
 
 
 ## Installation
@@ -162,7 +168,7 @@ ${getContributers(data.contributers)}
 
 ## Questions
 
-For additional questions please reach out to  https://github.com/${data.github} or by email ${data.email}
+For additional questions please reach out to  https://github.com/${data.github} or contact at ${data.email}
 ${getLicense(data)}
 
 ${isOpenSource(data)}
