@@ -50,6 +50,37 @@ const getLicense = data => {
   }
 }
 
+const isOpenSource = data => {
+  if (!data.isOpenSource) {
+    return ''
+  } else {
+    return `
+    ## Contributing
+
+    [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
+    `
+  }
+}
+
+const getTestSteps = arr => {
+  return arr.map(step => {
+    return `
+    1. ${step}\n  `
+  }).join('')
+}
+
+const getTestInstructions = data => {
+  if (!data.testSteps) {
+    return ''
+  } else {
+    return `
+    ## Test Instructions
+
+    ${getTestSteps(data.installSteps)}
+    `
+  }
+}
+
 // TODO: Create a function to generate markdown for README
 const generateMarkdown = data => {
   return `
@@ -77,13 +108,13 @@ const generateMarkdown = data => {
 
   ${data.usage}
 
+  ${getTestInstructions(data)}
 
   ## Credits
 
   ${getContributers(data.contributers)}
 
-  ## Contributing
-  
+  ${isOpenSource(data)}
 
   ## Questions
 
@@ -97,15 +128,6 @@ const generateMarkdown = data => {
 
   Badges aren't _necessary_, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
 
-
-  ## Features
-
-  If your project has a lot of features, consider adding a heading called "Features" and listing them there.
-
-
-  ## Contributing
-
-  If you created an application or package and would like other developers to contribute it, you will want to add guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own.
 
   ## Tests
 

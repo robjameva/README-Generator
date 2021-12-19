@@ -236,6 +236,4 @@ init()
         }
         console.log(generateMarkdown(data))
     })
-    //.then(data => {console.log(generateMarkdown(data)))
 
-    // .then(data => console.log(data))
