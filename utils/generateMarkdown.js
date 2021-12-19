@@ -42,9 +42,9 @@ const getLicense = data => {
 		return ''
 	} else {
 		return `
-  		## License
+## License
 
-  		${data.title} is released under the ${data.license}
+${data.title} is released under the ${data.license}
         
     `
 	}
@@ -65,7 +65,7 @@ const isOpenSource = data => {
 const getTestSteps = arr => {
 	return arr.map(step => {
 		return `
-		1. ${step}\n  `
+1. ${step}\n  `
 	}).join('')
 }
 
@@ -74,9 +74,9 @@ const getTestInstructions = data => {
 		return ''
 	} else {
 		return `
-		## Test Instructions
+## Test Instructions
 
-		${getTestSteps(data.installSteps)}
+${getTestSteps(data.installSteps)}
     `
 	}
 }
@@ -129,10 +129,7 @@ ${getLicense(data)}
 Badges aren't _necessary_, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
 
 
-## Tests
-
-Go the extra mile and write tests for your application. Then provide examples on how to run them.
-`;
+`
 }
 
 module.exports = generateMarkdown;
