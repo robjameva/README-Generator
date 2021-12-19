@@ -2,7 +2,7 @@
 
 ## Description 
 
-this is how we do it!!
+so cool! 
 
 
 ## Table of Contents 
@@ -15,39 +15,39 @@ this is how we do it!!
 
 ## Installation
 
-* install 1
-* install 2
-* install 3
-
+1. djdjd
+  1. sjsdjs
+  
 
 
 ## Usage 
 
-to use this app you must
+use age test
 
 
-## Test Instructions
-
-1. install 1
-1. install 2
-1. install 3
+                ## Test Instructions
 
 
+                1. djdjd
+  
+                1. sjsdjs
+  
+    
 
 ## Credits
 
-* robert:  https://github.com/robjmavea
-
+* djjd:  https://github.com/djdj
+  
 
 
 
 ## Questions
 
-For additional questions please reach out to  https://github.com/robjemeva or by email rob.evanik@gmail.com
+For additional questions please reach out to  https://github.com/rocj or by email eocj
 
-## License
+                ## License
 
-test proj is released under the Apache License 2.0
+                test proj is released under the BSD 3-Clause "New" or "Revised" license
+        
     
-
 ---
