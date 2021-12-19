@@ -26,13 +26,13 @@
 
   ## Credits
 
-  * Robert: github.com/robjamvea
-  * christian: github.com/vasqc
-  * jacob: github.com/Keemperor
+  * Robert:  https://github.com/robjamvea
+  * christian:  https://github.com/vasqc
+  * jacob:  https://github.com/Keemperor
   
 
   ## Questions
 
-  For additional questions please reach out to github.com/robjameva or by email rob.evanik@gmail.com
+  For additional questions please reach out to  https://github.com/robjameva or by email rob.evanik@gmail.com
   
   ---
