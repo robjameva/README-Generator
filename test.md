@@ -1,53 +1,53 @@
 # test proj
 
-  ## Description 
+## Description 
 
-  this is how we do it!!
-
-
-  ## Table of Contents 
-
-  * [Installation](#installation)
-  * [Usage](#usage)
-  * [Credits](#credits)
-  * [License](#license)
+this is how we do it!!
 
 
-  ## Installation
+## Table of Contents 
 
-  * install 1
-  * install 2
-  * install 3
-  
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license)
 
 
-  ## Usage 
+## Installation
 
-  to use this app you must
+* install 1
+* install 2
+* install 3
 
-  
-    ## Test Instructions
 
-    1. install 1
-  1. install 2
-  1. install 3
-  
+
+## Usage 
+
+to use this app you must
+
+
+## Test Instructions
+
+1. install 1
+1. install 2
+1. install 3
+
+
+
+## Credits
+
+* robert:  https://github.com/robjmavea
+
+
+
+
+## Questions
+
+For additional questions please reach out to  https://github.com/robjemeva or by email rob.evanik@gmail.com
+
+## License
+
+test proj is released under the Apache License 2.0
     
 
-  ## Credits
-
-  * robert:  https://github.com/robjmavea
-  
-
-  
-
-  ## Questions
-
-  For additional questions please reach out to  https://github.com/robjemeva or by email rob.evanik@gmail.com
-  
-  ## License
-
-  test proj is released under the Apache License 2.0
-        
-    
-  ---
+---
