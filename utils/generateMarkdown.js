@@ -97,9 +97,9 @@ const isOpenSource = data => {
 		return ''
 	} else {
 		return `
-    ## Contributing
+## Contributing
 
-    [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
     `
 	}
 }
@@ -138,8 +138,11 @@ ${data.description}
 
 * [Installation](#installation)
 * [Usage](#usage)
+* [Testing](#Test Instructions)
 * [Credits](#credits)
+* [Questions](#Questions)
 ${hasLicense(data)}
+* [Contributing](#Contributing)
 
 
 ## Installation
@@ -157,12 +160,12 @@ ${getTestInstructions(data)}
 
 ${getContributers(data.contributers)}
 
-${isOpenSource(data)}
-
 ## Questions
 
 For additional questions please reach out to  https://github.com/${data.github} or by email ${data.email}
 ${getLicense(data)}
+
+${isOpenSource(data)}
 
 `
 }
