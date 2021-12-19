@@ -1,13 +1,55 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 const renderLicenseBadge = license => {
-
+	switch (license) {
+		case 'Apache License 2.0':
+			return '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
+		case 'BSD 3-Clause "New" or "Revised" license':
+			return '[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)';
+		case 'BSD 2-Clause "Simplified" or "FreeBSD" license':
+			return '[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)';
+		case 'GNU General Public License (GPL)':
+			return '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
+		case 'GNU Library or "Lesser" General Public License (LGPL)':
+			return '[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)';
+		case 'MIT license':
+			return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
+		case 'Mozilla Public License 2.0':
+			return '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)';
+		case 'Common Development and Distribution License':
+			return '[![License](https://img.shields.io/badge/License-CDDL-brightgreen)](https://opensource.org/licenses/CDDL-1.0)';
+		case 'Eclipse Public License version 2.0':
+			return '[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)';
+		default:
+			return '';
+	}
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 const renderLicenseLink = license => {
-
+	switch (license) {
+		case 'Apache License 2.0':
+			return '(https://opensource.org/licenses/Apache-2.0)';
+		case 'BSD 3-Clause "New" or "Revised" license':
+			return '(https://opensource.org/licenses/BSD-3-Clause)';
+		case 'BSD 2-Clause "Simplified" or "FreeBSD" license':
+			return '(https://opensource.org/licenses/BSD-2-Clause)';
+		case 'GNU General Public License (GPL)':
+			return '(https://www.gnu.org/licenses/gpl-3.0)';
+		case 'GNU Library or "Lesser" General Public License (LGPL)':
+			return '(https://www.gnu.org/licenses/lgpl-3.0)';
+		case 'MIT license':
+			return '(https://opensource.org/licenses/MIT)';
+		case 'Mozilla Public License 2.0':
+			return '(https://opensource.org/licenses/MPL-2.0)';
+		case 'Common Development and Distribution License':
+			return '(https://opensource.org/licenses/CDDL-1.0)';
+		case 'Eclipse Public License version 2.0':
+			return '(https://opensource.org/licenses/EPL-1.0)';
+		default:
+			return '';
+	}
 }
 
 // TODO: Create a function that returns the license section of README
@@ -44,7 +86,7 @@ const getLicense = data => {
 		return `
 ## License
 
-${data.title} is released under the ${data.license}
+${data.title} is released under the ${data.license} ${renderLicenseLink(data.license)}
         
     `
 	}
@@ -84,6 +126,7 @@ ${getTestSteps(data.installSteps)}
 // TODO: Create a function to generate markdown for README
 const generateMarkdown = data => {
 	return `
+${renderLicenseBadge(data.license)}
 # ${data.title}
 
 ## Description 
@@ -120,14 +163,6 @@ ${isOpenSource(data)}
 
 For additional questions please reach out to  https://github.com/${data.github} or by email ${data.email}
 ${getLicense(data)}
----
-
-## Badges
-
-![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
-
-Badges aren't _necessary_, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
-
 
 `
 }

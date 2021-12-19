@@ -1,11 +1,9 @@
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![License](https://img.shields.io/badge/License-CDDL-brightgreen)](https://opensource.org/licenses/CDDL-1.0)
-
-# test proj
+# did I win
 
 ## Description 
 
-so cool! 
+I love this 
 
 
 ## Table of Contents 
@@ -18,39 +16,40 @@ so cool!
 
 ## Installation
 
-1. djdjd
-  1. sjsdjs
+1. firs
+  1. then
   
 
 
 ## Usage 
 
-use age test
+thsi is how
 
 
-                ## Test Instructions
+## Test Instructions
 
 
-                1. djdjd
+1. firs
   
-                1. sjsdjs
+1. then
   
     
 
 ## Credits
 
-* djjd:  https://github.com/djdj
+* rob:  https://github.com/jamevea
   
 
 
+    ## Contributing
+
+    [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
+    
 
 ## Questions
 
-For additional questions please reach out to  https://github.com/rocj or by email eocj
+For additional questions please reach out to  https://github.com/robjameva or by email rob.evaik
 
-                ## License
+## License
 
-                test proj is released under the BSD 3-Clause "New" or "Revised" license
-        
-    
----
+did I win is released under the Common Development and Distribution License (https://opensource.org/licenses/CDDL-1.0)
