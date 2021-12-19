@@ -29,6 +29,14 @@ const getContributers = arr => {
   }).join('')
 }
 
+const hasLicense = data => {
+  if (data.license === 'None') {
+    return ''
+  } else {
+    return `* [License](#license)`
+  }
+}
+
 const getLicense = data => {
   if (data.license === 'None') {
     return ''
@@ -57,7 +65,7 @@ const generateMarkdown = data => {
   * [Installation](#installation)
   * [Usage](#usage)
   * [Credits](#credits)
-  * [License](#license)
+  ${hasLicense(data)}
 
 
   ## Installation
@@ -73,6 +81,9 @@ const generateMarkdown = data => {
   ## Credits
 
   ${getContributers(data.contributers)}
+
+  ## Contributing
+  
 
   ## Questions
 
