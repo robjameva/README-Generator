@@ -1,6 +1,7 @@
 // // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
+const writeConduct = require('./utils/generateConduct')
 
 
 // // TODO: Create an array of questions for user input
@@ -229,5 +230,12 @@ init()
     .then(promptInstall)
     .then(promptTest)
     .then(promptContributers)
-    .then(data => console.log(generateMarkdown(data)))
+    .then(data => {
+        if (data.isOpenSource) {
+            writeConduct();
+        }
+        console.log(generateMarkdown(data))
+    })
+    //.then(data => {console.log(generateMarkdown(data)))
+
     // .then(data => console.log(data))
