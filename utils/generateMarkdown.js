@@ -16,10 +16,30 @@ const renderLicenseSection = license => {
 
 }
 
+// Generates a list of steps on a new line with an * before each step
 const getSteps = arr => {
   return arr.map(step => {
     return `* ${step}\n  `
   }).join('')
+}
+
+const getContributers = arr => {
+  return arr.map(contributer => {
+    return `* ${contributer.contributerName}: github.com/${contributer.contributerGithub}\n  `
+  }).join('')
+}
+
+const getLicense = data => {
+  if (data.license === 'None') {
+    return ''
+  } else {
+    return `
+  ## License
+
+  ${data.title} is released under the ${data.license}
+        
+    `
+  }
 }
 
 // TODO: Create a function to generate markdown for README
@@ -28,6 +48,7 @@ const generateMarkdown = data => {
   # ${data.title}
 
   ## Description 
+
   ${data.description}
 
 
@@ -40,20 +61,23 @@ const generateMarkdown = data => {
 
 
   ## Installation
+
   ${getSteps(data.installSteps)}
 
 
   ## Usage 
 
+  ${data.usage}
 
 
   ## Credits
 
+  ${getContributers(data.contributers)}
 
+  ## Questions
 
-  ## License
-
-
+  For additional questions please reach out to github.com/${data.github} or by email ${data.email}
+  ${getLicense(data)}
   ---
 
   ## Badges

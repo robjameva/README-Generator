@@ -18,7 +18,7 @@ const questions = [{
     }
 },
 {
-    type: 'input',
+    type: 'editor',
     name: 'description',
     message: 'Enter a description of your project (Required)',
     validate: descriptionInput => {
@@ -40,6 +40,7 @@ const questions = [{
     name: 'license',
     message: 'Choose an open source license',
     choices: [
+        'None',
         'Apache License 2.0',
         'BSD 3-Clause "New" or "Revised" license',
         'BSD 2-Clause "Simplified" or "FreeBSD" license',
