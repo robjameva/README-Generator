@@ -54,14 +54,22 @@ const renderLicenseLink = license => {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-const renderLicenseSection = license => {
+const renderLicenseSection = data => {
+	if (data.license === 'None') {
+		return ''
+	} else {
+		return `
+## License
 
+${data.title} is released under the ${data.license} ${renderLicenseLink(data.license)}
+`
+	}
 }
 
 // Generates a list of steps on a new line as an ordered list
-const getSteps = arr => {
+const getInstallSteps = arr => {
 	return arr.map(step => {
-		return `1. ${step}\n  `
+		return `1. ${step}\n`
 	}).join('')
 }
 
@@ -79,19 +87,6 @@ const hasLicense = data => {
 	}
 }
 
-const getLicense = data => {
-	if (data.license === 'None') {
-		return ''
-	} else {
-		return `
-## License
-
-${data.title} is released under the ${data.license} ${renderLicenseLink(data.license)}
-        
-    `
-	}
-}
-
 const isOpenSource = data => {
 	if (!data.isOpenSource) {
 		return ''
@@ -99,15 +94,13 @@ const isOpenSource = data => {
 		return `
 ## Contributing
 
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
-    `
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)`
 	}
 }
 
 const getTestSteps = arr => {
 	return arr.map(step => {
-		return `
-1. ${step}\n`
+		return `1. ${step}\n`
 	}).join('')
 }
 
@@ -117,9 +110,7 @@ const getTestInstructions = data => {
 	} else {
 		return `
 ## Testing
-
-${getTestSteps(data.installSteps)}
-    `
+${getTestSteps(data.testSteps)}`
 	}
 }
 
@@ -153,8 +144,7 @@ ${getContibutingLink(data)}
 
 ## Installation
 
-${getSteps(data.installSteps)}
-
+${getInstallSteps(data.installSteps)}
 
 ## Usage 
 
@@ -169,8 +159,7 @@ ${getContributers(data.contributers)}
 ## Questions
 
 For additional questions please reach out to  https://github.com/${data.github} or contact at ${data.email}
-${getLicense(data)}
-
+${renderLicenseSection(data)}
 ${isOpenSource(data)}
 
 `

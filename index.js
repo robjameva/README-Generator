@@ -1,7 +1,8 @@
 // // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
-const writeConduct = require('./utils/generateConduct')
+const writeReadme = require('./utils/writeReadme');
+const writeConduct = require('./utils/writeConduct')
 
 
 // // TODO: Create an array of questions for user input
@@ -234,6 +235,6 @@ init()
         if (data.isOpenSource) {
             writeConduct();
         }
-        console.log(generateMarkdown(data))
+        writeReadme(generateMarkdown(data))
     })
 
