@@ -117,6 +117,8 @@ ${getTestSteps(data.testSteps)}`
 const getContibutingLink = data => {
 	if (data.isOpenSource) {
 		return `* [Contributing](#Contributing)`
+	} else {
+		return '';
 	}
 }
 

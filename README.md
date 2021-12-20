@@ -1,49 +1,47 @@
-
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-# s
+# README Generator
 
 ## Description 
 
-fffff
+This is a README generator command line app built on node with the inquirer package
 
 
 ## Table of Contents 
 
+* [Demo](#Demo)
 * [Installation](#installation)
 * [Usage](#usage)
 * [Testing](#testing)
 * [Credits](#credits)
 * [Questions](#Questions)
-* [License](#license)
-undefined
 
+## Demo
+
+https://watch.screencastify.com/v/FXhsn9N0vyKV4HzHk2NY
 
 ## Installation
 
-1. d
+1. Clone the project
+1. Run npm install
+1. Start with node index.js
 
 
 ## Usage 
 
-d
+You can use this app to dynamically create professional readme files
 
 
 ## Testing
-1. d
+1. No testing available at the moment
 
 
 ## Credits
 
-* d: https://github.com/d
+* Robert Evanik: https://github.com/robjameva
 
 
 ## Questions
 
-For additional questions please reach out to  https://github.com/d or contact at d
-
-## License
-
-s is released under the GNU General Public License (GPL) (https://www.gnu.org/licenses/gpl-3.0)
+For additional questions please reach out to  https://github.com/robjameva or contact at rob.evanik@gmail.com
 
 
 
