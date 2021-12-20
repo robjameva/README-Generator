@@ -138,19 +138,19 @@ For answers to common questions about this code of conduct, see the FAQ at
 `
 
 const writeConduct = () => {
-    return new Promise((resolve, reject) => {
-        fs.writeFile('./code_of_conduct.md', md, err => {
-            if (err) {
-                reject(err);
-                return;
-            }
+  return new Promise((resolve, reject) => {
+    fs.writeFile('./output/code_of_conduct.md', md, err => {
+      if (err) {
+        reject(err);
+        return;
+      }
 
-            resolve({
-                ok: true,
-                message: 'File created!'
-            });
-        });
+      resolve({
+        ok: true,
+        message: 'File created!'
+      });
     });
+  });
 };
 
 module.exports = writeConduct;
