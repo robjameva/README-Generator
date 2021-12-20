@@ -10,8 +10,9 @@ const writeReadme = (content) => {
 
             resolve({
                 ok: true,
-                message: 'File created!'
+                message: 'file created'
             });
+            console.log('README generated! Please open the current foler to see your new README.md file')
         });
     });
 };
