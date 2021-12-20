@@ -1,10 +1,10 @@
 
-[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-# Last try
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+# Did I Win?
 
 ## Description 
 
-I hope this works
+This is a cool superbowl pool box checker app that checks if your box won!
 
 
 ## Table of Contents 
@@ -20,39 +20,34 @@ I hope this works
 
 ## Installation
 
-1. install by doing this
-1. then that
-1. finally youy get to 
+1. First download the exe file
+1. then open the downloaded file
+1. click run
 
 
 ## Usage 
 
-this is great from me
+You can use this application with friends and family on mobile or desktop web browsers
 
 
 ## Testing
-
-1. to test htis you need to
-
-1. then you can try
-
-1. finally it should wokre
+1. please use jest.js to test this app
+1. testing 1 2 3
 
 
 ## Credits
 
-* robert: https://github.com/robjmavea
-* asdfasdf: https://github.com/asdasd
-* asdfasd: https://github.com/asdasd
+* Robert: https://github.com/robjameva
+* Chris: https://github.com/testuser
 
 
 ## Questions
 
-For additional questions please reach out to  https://github.com/robjmavea or contact at rob.evanik@gmail.com
+For additional questions please reach out to  https://github.com/robjameva or contact at rob.evanik@gmail.com
 
 ## License
 
-Last try is released under the BSD 3-Clause "New" or "Revised" license (https://opensource.org/licenses/BSD-3-Clause)
+Did I Win? is released under the Apache License 2.0 (https://opensource.org/licenses/Apache-2.0)
 
 
 ## Contributing

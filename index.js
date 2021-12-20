@@ -237,4 +237,5 @@ init()
         }
         writeReadme(generateMarkdown(data))
     })
+    .then(console.log('README generated! Please open the current foler to see your new README.md file'))
 
