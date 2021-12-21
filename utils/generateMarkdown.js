@@ -1,13 +1,15 @@
+const { restoreDefaultPrompts } = require("inquirer");
+
 // License Badge Links
-const apacheBadge = 'https://img.shields.io/badge/License-Apache_2.0-blue.svg';
-const BDS3Badge = 'https://img.shields.io/badge/License-BSD_3--Clause-blue.svg';
-const BDS2Badge = 'https://img.shields.io/badge/License-BSD_2--Clause-orange.svg';
-const GNUGeneralBadge = 'https://img.shields.io/badge/License-GPLv3-blue.svg';
-const GNULibraryBadge = 'https://img.shields.io/badge/License-LGPL_v3-blue.svg';
-const MITBadge = 'https://img.shields.io/badge/License-MIT-yellow.svg';
-const mozillaBadge = 'https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg';
-const CDDLBadge = 'https://img.shields.io/badge/License-CDDL-brightgreen';
-const eclipseBadge = 'https://img.shields.io/badge/License-EPL_1.0-red.svg';
+const apacheBadge = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)]';
+const BDS3Badge = '[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)]';
+const BDS2Badge = '[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)]';
+const GNUGeneralBadge = '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]';
+const GNULibraryBadge = '[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)]';
+const MITBadge = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]';
+const mozillaBadge = '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)]';
+const CDDLBadge = '[![License](https://img.shields.io/badge/License-CDDL-brightgreen)]';
+const eclipseBadge = '[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)]';
 
 // License URL Links
 const apacheLink = 'https://opensource.org/licenses/Apache-2.0';
@@ -23,55 +25,78 @@ const eclipseLink = 'https://opensource.org/licenses/EPL-1.0';
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 const renderLicenseBadge = license => {
+	let result = ``;
+
 	switch (license) {
 		case 'Apache License 2.0':
-			return `[![License](${apacheBadge})](${apacheLink})`;
+			result = `${apacheBadge}(${apacheLink})`;
+			break;
 		case 'BSD 3-Clause "New" or "Revised" license':
-			return `[![License](${BDS3Badge})](${BDS3Link})`;
+			result = `${BDS3Badge}(${BDS3Link})`;
+			break;
 		case 'BSD 2-Clause "Simplified" or "FreeBSD" license':
-			return `[![License](${BDS2Badge})](${BDS2Link})`;
+			result = `${BDS2Badge}(${BDS2Link})`;
+			break;
 		case 'GNU General Public License (GPL)':
-			return `[![License: GPL v3](${GNUGeneralBadge})](${GNUGeneralLink})`;
+			result = `${GNUGeneralBadge}(${GNUGeneralLink})`;
+			break;
 		case 'GNU Library or "Lesser" General Public License (LGPL)':
-			return `[![License: LGPL v3](${GNULibraryBadge})](${GNULibraryLink})`;
+			result = `${GNULibraryBadge}(${GNULibraryLink})`;
+			break;
 		case 'MIT license':
-			return `[![License: MIT](${MITBadge})](${MITLink})`;
+			result = `${MITBadge}(${MITLink})`;
+			break;
 		case 'Mozilla Public License 2.0':
-			return `[![License: MPL 2.0](${mozillaBadge})](${mozillaLink})`;
+			result = `${mozillaBadge}(${mozillaLink})`;
+			break;
 		case 'Common Development and Distribution License':
-			return `[![License](${CDDLBadge})](${CDDLLink})`;
+			result = `${CDDLBadge}(${CDDLLink})`;
+			break;
 		case 'Eclipse Public License version 2.0':
-			return `[![License](${eclipseBadge})](${eclipseLink})`;
+			result = `${eclipseBadge}(${eclipseLink})`;
+			break;
 		default:
-			return '';
+			result = ``;
 	}
+	return result;
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 const renderLicenseLink = license => {
+	let result = ``;
 	switch (license) {
 		case 'Apache License 2.0':
-			return `(${apacheLink})`;
+			result = `${apacheLink}`;
+			break;
 		case 'BSD 3-Clause "New" or "Revised" license':
-			return `(${BDS3Link})`;
+			result = `${BDS3Link}`;
+			break;
 		case 'BSD 2-Clause "Simplified" or "FreeBSD" license':
-			return `(${BDS2Link})`;
+			result = `${BDS2Link}`;
+			break;
 		case 'GNU General Public License (GPL)':
-			return `(${GNUGeneralLink})`;
+			result = `${GNUGeneralLink}`;
+			break;
 		case 'GNU Library or "Lesser" General Public License (LGPL)':
-			return `(${GNULibraryLink})`;
+			result = `${GNULibraryLink}`;
+			break;
 		case 'MIT license':
-			return `(${MITLink})`;
+			result = `${MITLink}`;
+			break;
 		case 'Mozilla Public License 2.0':
-			return `(${mozillaLink})`;
+			result = `${mozillaLink}`;
+			break;
 		case 'Common Development and Distribution License':
-			return `(${CDDLLink})`;
+			result = `${CDDLLink}`;
+			break;
 		case 'Eclipse Public License version 2.0':
-			return `(${eclipseLink})`;
+			result = `${eclipseLink}`;
+			break;
 		default:
-			return '';
+			result = ``;
 	}
+	return result;
 }
 
 // TODO: Create a function that returns the license section of README
