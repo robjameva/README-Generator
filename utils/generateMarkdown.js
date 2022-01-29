@@ -179,6 +179,7 @@ ${renderLicenseBadge(data.license)}
 
 ${data.description}
 
+![home page screenshot](public/img/screen_shot.png?raw=true)
 
 ## Table of Contents 
 
